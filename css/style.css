@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -168,8 +168,8 @@ html {
   width: 100%;
   height: 48px;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
-          box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
+  -webkit-box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
+          box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
@@ -179,28 +179,32 @@ html {
 }
 
 .input input::-webkit-input-placeholder {
-  font-weight: 600;
+  font-weight: 300;
+  opacity: 0.7;
   font-size: 14px;
   letter-spacing: 1px;
   color: #ffffff;
 }
 
 .input input:-ms-input-placeholder {
-  font-weight: 600;
+  font-weight: 300;
+  opacity: 0.7;
   font-size: 14px;
   letter-spacing: 1px;
   color: #ffffff;
 }
 
 .input input::-ms-input-placeholder {
-  font-weight: 600;
+  font-weight: 300;
+  opacity: 0.7;
   font-size: 14px;
   letter-spacing: 1px;
   color: #ffffff;
 }
 
 .input input::placeholder {
-  font-weight: 600;
+  font-weight: 300;
+  opacity: 0.7;
   font-size: 14px;
   letter-spacing: 1px;
   color: #ffffff;
@@ -228,8 +232,8 @@ html {
   width: 100%;
   height: 48px;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
-          box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
+  -webkit-box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
+          box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
@@ -396,7 +400,7 @@ body {
   color: #000000;
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 body._lock {
@@ -693,8 +697,8 @@ main {
   display: -ms-flexbox;
   display: flex;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
-          box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
+  -webkit-box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
+          box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
   height: 47px;
   border-radius: 10px;
   overflow: hidden;

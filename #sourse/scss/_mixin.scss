@@ -7,7 +7,7 @@ $tablet: 991.98px;
 $mobile: 767.98px;
 $mobileSmall: 479.98px;
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 //colors
 
 $white: #ffffff;
@@ -65,7 +65,7 @@ $black: #000000;
     width: 100%;
     height: 48px;
     background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
+    box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
     border-radius: 10px;
     font-weight: 600;
     font-size: 14px;
@@ -73,7 +73,8 @@ $black: #000000;
     color: $white;
     padding-left: 44px;
     &::placeholder {
-      font-weight: 600;
+      font-weight: 300;
+      opacity: 0.7;
       font-size: 14px;
       letter-spacing: 1px;
       color: $white;
@@ -104,7 +105,7 @@ $black: #000000;
   width: 100%;
   height: 48px;
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
+  box-shadow: 0px 20px 50px rgba(0, 74, 123, 0.596);
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
