@@ -195,8 +195,13 @@ check16.addEventListener('change', (e) => {
 const sumS = document.querySelectorAll('.sum');
 setInterval(() => {
   let currentSum = 0;
-  sumS.forEach((sum) => {
-    currentSum = Number(currentSum) + Number(sum.value) * 12;
+  sumS.forEach((sum, i) => {
+    if (i === 0 || i === 1) {
+      let procent = Number(sum.value) > 0 ? (Number(sum.value) / 100) * 13 : 0;
+      currentSum = Number(currentSum) + Number(sum.value) * 12 + procent * 12;
+    } else {
+      currentSum = Number(currentSum) + Number(sum.value) * 12;
+    }
   });
   incomeInput.value = currentSum;
 }, 1000);
