@@ -1,0 +1,61 @@
+.slider {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  @media (max-width: $mobile) {
+    margin-top: 0px;
+  }
+  &__container {
+    background: linear-gradient(
+        38.09deg,
+        #0044f2 -15.71%,
+        #0079f2 43.72%,
+        #5edfff 100.42%,
+        #20a6f9 100.42%
+      ),
+      #138ff6;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    color: $white;
+  }
+
+  &__content {
+    padding: 0px 30px;
+    //  margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  &__block {
+    //  width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    //  padding: 0px 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    min-height: 0;
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+}
+.swiper-block {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.swiper__container {
+  margin: 0;
+}

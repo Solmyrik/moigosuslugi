@@ -766,3 +766,59 @@ main {
 .none.active {
   display: block;
 }
+
+.slider {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 767.98px) {
+  .slider {
+    margin-top: 0px;
+  }
+}
+
+.slider__container {
+  background: linear-gradient(38.09deg, #0044f2 -15.71%, #0079f2 43.72%, #5edfff 100.42%, #20a6f9 100.42%), #138ff6;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.slider__content {
+  padding: 0px 30px;
+}
+
+.slider__title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.slider__block {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.slider__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 0;
+}
+
+.slider__slide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  cursor: pointer;
+}
+
+.slider__slide img {
+  width: 100%;
+}
+
+.swiper__container {
+  margin: 0;
+}
