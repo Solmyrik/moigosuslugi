@@ -840,4 +840,5 @@ main {
   padding: 25px 15px;
   font-size: 22px;
   text-align: center;
+  border-bottom: 1px solid #000000;
 }
