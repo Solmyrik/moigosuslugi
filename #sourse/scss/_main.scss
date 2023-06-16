@@ -1,0 +1,31 @@
+.main {
+  margin: 50px 0px;
+  @media (max-width: $mobile) {
+    margin: 0;
+  }
+  &__container {
+    padding-top: 70px;
+    border-radius: 10px;
+    background: linear-gradient(45.08deg, #0044f2 0.13%, #0079f2 51.24%, #5edfff 100%, #20a6f9 100%),
+      #138ff6;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $mobile) {
+      min-height: 100vh;
+      border-radius: 0px;
+      height: 100%;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 37.3333px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,41 @@
+@import '_null.scss';
+@import '_mixin';
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+html {
+  &.lock {
+    overflow: hidden;
+  }
+}
+body {
+  color: $black;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  background: linear-gradient(12.65deg, rgba(0, 0, 0, 0.75) 7.11%, rgba(0, 0, 0, 0.0001) 92.89%),
+    rgba(170, 170, 170, 0.0001);
+  // background: linear-gradient(45.08deg, #0044f2 0.13%, #0079f2 51.24%, #5edfff 100%, #20a6f9 100%),
+  //   #138ff6;
+  &._lock {
+    overflow: hidden;
+  }
+  &.lock {
+    overflow: hidden;
+  }
+}
+main {
+  flex: 100%;
+}
+
+[class*='__container'] {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+@import '_main';
+@import '_change';

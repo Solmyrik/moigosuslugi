@@ -1,0 +1,140 @@
+html {
+  scroll-behavior: smooth;
+}
+// resolution
+$pc: 1410px;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+//colors
+
+$white: #ffffff;
+$black: #000000;
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  img {
+    display: none;
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 400px;
+  position: relative;
+  margin-bottom: 20px;
+  &__name {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 22px;
+    opacity: 0.5;
+    margin-bottom: 7px;
+  }
+
+  &__label {
+    position: relative;
+  }
+  &__select {
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+  input {
+    width: 100%;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 20px 50px rgba(0, 73, 123, 0.15);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: $white;
+    padding-left: 44px;
+    &::placeholder {
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: $white;
+    }
+  }
+  &__icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.choices {
+  width: 40px;
+}
+.choices__inner {
+  background-color: inherit;
+  border: none;
+  color: $white;
+  padding: 9.5px 0px 3.75px !important;
+}
+
+.choices.is-open {
+  .choices__inner {
+    background-color: $white;
+    border-radius: 0;
+    color: $black;
+  }
+}
+.choices__item {
+  font-weight: 500;
+  padding-left: 5px;
+}
+.choices__item--choice {
+  padding-left: 15px;
+  width: 40px;
+  &::after {
+    display: none;
+  }
+}
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+  background-color: inherit !important;
+  font-weight: 500;
+  width: 40px !important;
+  // height: 44px !important;
+  padding: 14px 0px !important;
+  padding-left: 0px !important;
+  display: flex;
+  padding-right: 0px !important;
+  overflow: hidden !important;
+  padding-left: 7px !important;
+  img {
+    margin-right: 4px;
+  }
+}
+.choices__list--dropdown .choices__list,
+.choices__list[aria-expanded] .choices__list {
+  overflow: hidden !important;
+}
+.choices[data-type*='select-one']::after {
+  right: 0px;
+  top: 22px;
+  // left: 5px;
+  border-color: $white transparent transparent;
+}

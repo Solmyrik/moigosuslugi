@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="choices/choices.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="choices/choices.min.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        <section class="main">
+          <div class="main__container">
+            <div class="main__logo">
+              <img src="img/logo.png" alt="logo" />
+            </div>
+            <h1 class="main__title">Мои госуслуги</h1>
+            <div class="main__form form">
+              <div class="form__input input">
+                <h4 class="input__name">Укажите ваше имя</h4>
+                <div class="input__label">
+                  <div class="input__icon">
+                    <img src="img/icons/person.svg" alt="person" />
+                  </div>
+                  <input type="text" placeholder="Введите имя" />
+                </div>
+              </div>
+              <div class="form__input input">
+                <h4 class="input__name">Укажите номер для связи</h4>
+                <div class="input__label">
+                  <div class="input__select">
+                    <select
+                      name=""
+                      id="choices-images"
+                      class="top-calculator__select select-d select-phone"
+                    ></select>
+                  </div>
+                  <input type="tel" class="phone" value="+7" />
+                </div>
+              </div>
+              <div class="form__item input change">
+                <h4 class="input__name">Количество членов семьи</h4>
+                <div class="change__body">
+                  <div class="change__item">2</div>
+                  <div class="change__item">3</div>
+                  <div class="change__item">4</div>
+                  <div class="change__item">5</div>
+                  <div class="change__item active">6</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
