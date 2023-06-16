@@ -1,47 +1,8 @@
-// //select
-// const values = [
-//   {
-//     value: 'En',
-//     label: '<img src="img/countries/ru1.svg"/>',
-//     id: 2,
-//   },
-//   {
-//     value: 'Ru',
-//     label: '<img src="img/countries/ru.svg"/>',
-//     id: 1,
-//     selected: true,
-//   },
-// ];
-// const defaultSelect = () => {
-//   const element = document.querySelectorAll('.select-d');
-//   element.forEach((e, i) => {
-//     const choices = new Choices(e, {
-//       choices: values,
-//       // searchEnabled: true,
-//       // searchPlaceholderValue: 'Поиск',
-//       placeholder: true,
-//       searchEnabled: false,
-//       searchPlaceholderValue: '',
-//       searchChoices: false,
-//       // removeItemButton: true,
-//     });
-//   });
-// };
-
-// defaultSelect();
-
-//
-// const phone = document.querySelector('.phone');
-// const phoneSelect = document.querySelector('.select-phone');
-
-// phoneSelect.addEventListener('change', (e) => {
-//   if (e.currentTarget.value === 'En') {
-//     phone.value = '+1';
-//   }
-//   if (e.currentTarget.value === 'Ru') {
-//     phone.value = '+7';
-//   }
-// });
+const incomeInput = document.getElementById('income');
+const familyMembersInput = document.getElementById('family-members');
+const childrenInput = document.getElementById('children');
+const resultValue = document.getElementById('result');
+const incomeValue = document.getElementById('income__value');
 
 // change__body
 const changeBody = document.querySelectorAll('.change__body');
@@ -59,13 +20,23 @@ changeBody.forEach((ch) => {
 
 const changeChild = () => {
   let index = null;
+  let indexMember = null;
   const childrenArrow = document.querySelector('.children-arrow').children;
+  const childrenMember = document.querySelector('.children-member').children;
   const child2 = document.querySelectorAll('.child-2');
   for (let i = 0; i < childrenArrow.length; i++) {
     if (childrenArrow[i].className === 'change__item active') {
       index = i - 1;
     }
   }
+  for (let i = 0; i < childrenMember.length; i++) {
+    if (childrenMember[i].className === 'change__item active') {
+      indexMember = i - 1;
+    }
+  }
+
+  childrenInput.value = index + 2;
+  familyMembersInput.value = indexMember + 3;
 
   child2.forEach((e) => {
     e.classList.remove('active');
@@ -94,30 +65,44 @@ const changeChild = () => {
 
 // checkboxes
 const check1 = document.querySelector('.checkbox-1');
+const check11 = document.querySelector('.checkbox-11');
 const salary = document.querySelector('.salary');
+const spouse = document.querySelector('.spouse');
 
 const check2 = document.querySelector('.checkbox-2');
+const check12 = document.querySelector('.checkbox-12');
 const pension = document.querySelector('.pension');
 
 const check4 = document.querySelector('.checkbox-4');
+const check14 = document.querySelector('.checkbox-14');
 const check6 = document.querySelector('.checkbox-6');
+const check16 = document.querySelector('.checkbox-16');
 const additional = document.querySelector('.additional');
 const childspension = document.querySelector('.childspension');
 
 const check3 = document.querySelector('.checkbox-3');
+const check13 = document.querySelector('.checkbox-13');
 const self = document.querySelector('.self');
 
 const check5 = document.querySelector('.checkbox-5');
+const check15 = document.querySelector('.checkbox-15');
 const scholarship = document.querySelector('.scholarship');
 
 const selectStatus = document.querySelector('.select-status');
 const widow = document.querySelector('.widow');
+const spouseChecks = document.querySelector('.spouse-checks');
 
 selectStatus.addEventListener('change', (e) => {
   if (e.target.value === 'Вдова') {
     widow.classList.add('active');
   } else {
     widow.classList.remove('active');
+  }
+
+  if (e.target.value === 'ЗАГС') {
+    spouseChecks.classList.add('active');
+  } else {
+    spouseChecks.classList.remove('active');
   }
 });
 
@@ -129,7 +114,23 @@ check1.addEventListener('change', (e) => {
     salary.classList.remove('active');
   }
 });
+check11.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    spouse.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    spouse.classList.remove('active');
+  }
+});
 check2.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    pension.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    pension.classList.remove('active');
+  }
+});
+check12.addEventListener('change', (e) => {
   if (e.currentTarget.checked === true) {
     pension.classList.add('active');
     additional.classList.add('active');
@@ -145,7 +146,23 @@ check3.addEventListener('change', (e) => {
     self.classList.remove('active');
   }
 });
+check13.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    self.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    self.classList.remove('active');
+  }
+});
 check5.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    scholarship.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    scholarship.classList.remove('active');
+  }
+});
+check15.addEventListener('change', (e) => {
   if (e.currentTarget.checked === true) {
     scholarship.classList.add('active');
     additional.classList.add('active');
@@ -159,21 +176,35 @@ check4.addEventListener('change', (e) => {
     additional.classList.add('active');
   }
 });
+check14.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    additional.classList.add('active');
+  }
+});
 check6.addEventListener('change', (e) => {
   if (e.currentTarget.checked === true) {
     additional.classList.add('active');
   }
 });
+check16.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    additional.classList.add('active');
+  }
+});
+
+const sumS = document.querySelectorAll('.sum');
+setInterval(() => {
+  let currentSum = 0;
+  sumS.forEach((sum) => {
+    currentSum = Number(currentSum) + Number(sum.value);
+  });
+  incomeInput.value = currentSum;
+}, 1000);
 
 //count
 const MONTHS_IN_YEAR = 12;
 const LIVING_WAGE = 13000;
 
-const incomeInput = document.getElementById('income');
-const familyMembersInput = document.getElementById('family-members');
-const childrenInput = document.getElementById('children');
-const resultValue = document.getElementById('result');
-const incomeValue = document.getElementById('income__value');
 const calc = () => {
   const income = parseFloat(incomeInput.value);
   const familyMembers = parseInt(familyMembersInput.value);
