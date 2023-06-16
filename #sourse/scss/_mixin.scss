@@ -251,3 +251,54 @@ $black: #000000;
   font-weight: 700;
   margin-bottom: 10px;
 }
+
+//////////////////////
+///
+///
+.input-with-waves {
+  position: relative;
+  z-index: 1;
+  padding: 8px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: all 0.3s;
+}
+
+/* Анимацию подсветки нижней границы инпута при фокусировке */
+.input-with-waves:focus {
+  border-bottom: 1px solid #2196f3;
+}
+
+/* Создание двух псевдоэлементов для анимации волн */
+.input-with-waves:focus::before,
+.input-with-waves:focus::after {
+  content: '';
+  position: absolute;
+  bottom: 1px; /* Выровнять с нижней границей инпута */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #2196f3;
+  z-index: 997;
+  animation: wave 1s ease-in-out;
+}
+
+.input-with-waves:focus::after {
+  animation: wave 1s ease-in-out 0.5s; /* Задержка для второго эффекта волны */
+}
+
+/* Описание анимации волны */
+@keyframes wave {
+  0% {
+    width: 0;
+    margin-left: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    margin-left: -50%;
+    opacity: 0;
+  }
+}

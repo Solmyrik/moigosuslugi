@@ -69,3 +69,22 @@ main {
   width: 120%;
   margin: 20px 0px;
 }
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 -40px #cfd4e6;
+  }
+  40% {
+    box-shadow: 0 0 40px #cfd4e6;
+  }
+  60% {
+    box-shadow: 0 0 40px #cfd4e6;
+  }
+  100% {
+    box-shadow: 0 0 -40px #cfd4e6;
+  }
+}
+
+.button-glow {
+  animation: glowing 4000ms infinite;
+}

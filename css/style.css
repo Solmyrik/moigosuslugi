@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
 * {
   padding: 0px;
@@ -379,6 +380,71 @@ html {
 .income {
   font-weight: 700;
   margin-bottom: 10px;
+}
+
+.input-with-waves {
+  position: relative;
+  z-index: 1;
+  padding: 8px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Анимацию подсветки нижней границы инпута при фокусировке */
+.input-with-waves:focus {
+  border-bottom: 1px solid #2196f3;
+}
+
+/* Создание двух псевдоэлементов для анимации волн */
+.input-with-waves:focus::before,
+.input-with-waves:focus::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  /* Выровнять с нижней границей инпута */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #2196f3;
+  z-index: 997;
+  -webkit-animation: wave 1s ease-in-out;
+          animation: wave 1s ease-in-out;
+}
+
+.input-with-waves:focus::after {
+  -webkit-animation: wave 1s ease-in-out 0.5s;
+          animation: wave 1s ease-in-out 0.5s;
+  /* Задержка для второго эффекта волны */
+}
+
+/* Описание анимации волны */
+@-webkit-keyframes wave {
+  0% {
+    width: 0;
+    margin-left: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    margin-left: -50%;
+    opacity: 0;
+  }
+}
+@keyframes wave {
+  0% {
+    width: 0;
+    margin-left: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    margin-left: -50%;
+    opacity: 0;
+  }
 }
 
 .wrapper {
@@ -864,4 +930,47 @@ main {
   height: 8px;
   width: 120%;
   margin: 20px 0px;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    -webkit-box-shadow: 0 0 -40px #cfd4e6;
+            box-shadow: 0 0 -40px #cfd4e6;
+  }
+  40% {
+    -webkit-box-shadow: 0 0 40px #cfd4e6;
+            box-shadow: 0 0 40px #cfd4e6;
+  }
+  60% {
+    -webkit-box-shadow: 0 0 40px #cfd4e6;
+            box-shadow: 0 0 40px #cfd4e6;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 -40px #cfd4e6;
+            box-shadow: 0 0 -40px #cfd4e6;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    -webkit-box-shadow: 0 0 -40px #cfd4e6;
+            box-shadow: 0 0 -40px #cfd4e6;
+  }
+  40% {
+    -webkit-box-shadow: 0 0 40px #cfd4e6;
+            box-shadow: 0 0 40px #cfd4e6;
+  }
+  60% {
+    -webkit-box-shadow: 0 0 40px #cfd4e6;
+            box-shadow: 0 0 40px #cfd4e6;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 -40px #cfd4e6;
+            box-shadow: 0 0 -40px #cfd4e6;
+  }
+}
+
+.button-glow {
+  -webkit-animation: glowing 4000ms infinite;
+          animation: glowing 4000ms infinite;
 }

@@ -276,3 +276,28 @@ function handleFormInput() {
 const minuButton = document.querySelector('.form__minbutton');
 
 minuButton.addEventListener('click', calc);
+
+const glow = document.querySelectorAll('.glow');
+
+const searchIndex = (i) => {
+  let index = i;
+  const parent = glow[index + 1].parentElement;
+  const granParent = parent.parentElement;
+  if (granParent.className.includes('child-2')) {
+    if (granParent.className.includes('active') === false) {
+      searchIndex(index + 1);
+      console.log('click');
+    }
+  }
+  return index;
+};
+
+glow.forEach((g, i) => {
+  g.addEventListener('click', (e) => {
+    const index = searchIndex(i);
+    if (g.className.includes('button-glow')) {
+      g.classList.remove('button-glow');
+      glow[index + 1].classList.add('button-glow');
+    }
+  });
+});
