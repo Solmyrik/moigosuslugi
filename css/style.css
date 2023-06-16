@@ -224,6 +224,14 @@ html {
   }
 }
 
+input.customs {
+  height: 56px;
+  background: #465465;
+  -webkit-box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+}
+
 .select {
   width: 100%;
   height: 48px;
@@ -465,8 +473,8 @@ main {
 }
 
 .form__minbutton {
-  background: -webkit-gradient(linear, left bottom, left top, from(#dc8e1f), color-stop(51.59%, #f0b54f), to(#f7e7ac)), #f0b54f;
-  background: linear-gradient(0deg, #dc8e1f 0%, #f0b54f 51.59%, #f7e7ac 100%), #f0b54f;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a19585), color-stop(51.59%, #776951), to(#3e3925)), #bf9854;
+  background: linear-gradient(0deg, #a19585 0%, #776951 51.59%, #3e3925 100%), #bf9854;
   -webkit-box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
   width: 128px;
@@ -530,6 +538,36 @@ main {
 .form__button:active {
   -webkit-transform: translate(0px, 1px);
           transform: translate(0px, 1px);
+}
+
+.form-bottom {
+  background: #f2f2f2;
+  -webkit-box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 20px 10px;
+  border-radius: 10px;
+  color: #666666;
+}
+
+.form-bottom_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.form-bottom .income {
+  margin: 0;
+  color: #000000;
+}
+
+.form-bottom .income__value {
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .change__body {

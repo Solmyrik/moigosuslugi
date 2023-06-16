@@ -31,7 +31,7 @@
 }
 
 .form__minbutton {
-  background: linear-gradient(0deg, #dc8e1f 0%, #f0b54f 51.59%, #f7e7ac 100%), #f0b54f;
+  background: linear-gradient(0deg, #a19585 0%, #776951 51.59%, #3e3925 100%), #bf9854;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
   width: 128px;
   height: 33px;
@@ -70,5 +70,27 @@
   }
   &:active {
     transform: translate(0px, 1px);
+  }
+}
+
+.form-bottom {
+  background: #f2f2f2;
+  box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 20px 10px;
+  border-radius: 10px;
+  color: #666666;
+  &_left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .income {
+    margin: 0;
+    color: $black;
+  }
+  .income__value {
+    font-size: 26px;
+    font-weight: 700;
   }
 }

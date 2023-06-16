@@ -206,6 +206,9 @@ const MONTHS_IN_YEAR = 12;
 const LIVING_WAGE = 13000;
 
 const calc = () => {
+  let result = '';
+  let resultNumber = '';
+  const incomeNumber = document.querySelector('.income__numbers');
   const income = parseFloat(incomeInput.value);
   const familyMembers = parseInt(familyMembersInput.value);
   const children = parseInt(childrenInput.value);
@@ -225,14 +228,17 @@ const calc = () => {
     console.log(13000, averageIncome, value75);
     if (value75 <= 13000) {
       if (value100 <= 13000) {
-        result = 'Положено семье 100%';
+        result = 'Положено семье ';
+        resultNumber = '100%';
         // return;
       } else {
-        result = 'Положено семье 75%';
+        result = 'Положено семье ';
+        resultNumber = '75%';
         // return;
       }
     } else {
-      result = 'Положено семье 50%';
+      result = 'Положено семье ';
+      resultNumber = '50%';
       // return;
     }
   } else {
@@ -241,6 +247,8 @@ const calc = () => {
 
   console.log(result);
   resultValue.textContent = result;
+  incomeNumber.textContent = resultNumber;
+  console.log(incomeNumber);
 };
 
 function handleFormInput() {
