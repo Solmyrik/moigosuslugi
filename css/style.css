@@ -140,6 +140,13 @@ html {
   margin-bottom: 7px;
 }
 
+.input__subname {
+  font-size: 10px;
+  margin-top: -5px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
 .input__label {
   position: relative;
 }
@@ -207,6 +214,10 @@ html {
           transform: translate(0, -50%);
 }
 
+.input span {
+  position: relative;
+}
+
 @media (max-width: 767.98px) {
   .input {
     width: 100%;
@@ -272,7 +283,7 @@ html {
 
 .choices__list--dropdown .choices__item--selectable,
 .choices__list[aria-expanded] .choices__item--selectable {
-  background-color: inherit !important;
+  background: rgba(255, 255, 255, 0.25);
   font-weight: 500;
   width: 40px !important;
   padding: 14px 0px !important;
@@ -299,6 +310,64 @@ html {
   right: 0px;
   top: 22px;
   border-color: #ffffff transparent transparent;
+}
+
+.checkbox-custom,
+.radio-custom {
+  opacity: 0;
+  position: absolute;
+  font-weight: 600;
+  font-size: 13.3333px;
+  line-height: 22px;
+}
+
+.checkbox-custom,
+.checkbox-custom-label,
+.radio-custom,
+.radio-custom-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.checkbox-custom-label,
+.radio-custom-label {
+  position: relative;
+  font-weight: 600;
+  font-size: 13.3333px;
+}
+
+.checkbox-custom + .checkbox-custom-label:before,
+.radio-custom + .radio-custom-label:before {
+  content: '';
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+  content: '';
+  background-image: url("../img/icons/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.radio-custom + .radio-custom-label:before {
+  border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+  content: '';
+  background-image: url("../img/icons/check.svg");
+  background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -450,6 +519,12 @@ main {
   height: 0;
   border-top: 48px solid #ffffff;
   border-right: 20px solid #ffffff00;
+}
+
+.change__item_big {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
 }
 
 .change__item:nth-child(1).active::after {
