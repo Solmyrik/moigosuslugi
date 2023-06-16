@@ -280,16 +280,28 @@ minuButton.addEventListener('click', calc);
 const glow = document.querySelectorAll('.glow');
 
 const searchIndex = (i) => {
-  let index = i;
-  const parent = glow[index + 1].parentElement;
+  let check = true;
+  const parent = glow[i + 1].parentElement;
   const granParent = parent.parentElement;
   if (granParent.className.includes('child-2')) {
     if (granParent.className.includes('active') === false) {
-      searchIndex(index + 1);
-      console.log('click');
+      while (check) {
+        i += 1;
+        const parent = glow[i + 1].parentElement;
+        const granParent = parent.parentElement;
+        if (granParent.className.includes('child-2')) {
+          if (granParent.className.includes('active') === false) {
+            console.log('ok');
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
     }
   }
-  return index;
+  return i;
 };
 
 glow.forEach((g, i) => {
