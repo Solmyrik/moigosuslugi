@@ -53,5 +53,27 @@ changeBody.forEach((ch) => {
       currntChildren[i].classList.remove('active');
     }
     e.target.classList.add('active');
+    changeChild();
   });
 });
+
+const changeChild = () => {
+  let index = null;
+  const childrenArrow = document.querySelector('.children-arrow').children;
+  const child2 = document.querySelectorAll('.child-2');
+  for (let i = 0; i < childrenArrow.length; i++) {
+    if (childrenArrow[i].className === 'change__item active') {
+      index = i - 1;
+    }
+  }
+
+  child2.forEach((e) => {
+    e.classList.remove('active');
+  });
+
+  for (let i = 0; i <= index; i++) {
+    child2[i].classList.add('active');
+  }
+
+  console.log(index);
+};

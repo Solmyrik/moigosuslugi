@@ -231,6 +231,14 @@ html {
   color: #000000;
 }
 
+.child-2 {
+  display: none;
+}
+
+.child-2.active {
+  display: block;
+}
+
 .choices {
   width: 40px;
 }
@@ -303,6 +311,7 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100%;
+  background: linear-gradient(12.65deg, rgba(0, 0, 0, 0.75) 7.11%, rgba(0, 0, 0, 0.0001) 92.89%), rgba(170, 170, 170, 0.0001);
 }
 
 html.lock {
@@ -314,7 +323,6 @@ body {
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  background: linear-gradient(12.65deg, rgba(0, 0, 0, 0.75) 7.11%, rgba(0, 0, 0, 0.0001) 92.89%), rgba(170, 170, 170, 0.0001);
 }
 
 body._lock {
