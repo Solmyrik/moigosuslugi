@@ -243,6 +243,7 @@ const calc = () => {
     }
   } else {
     result = 'У вас превышение дохода. Право на выплату отсутствует';
+    resultNumber = '0%';
   }
 
   console.log(result);

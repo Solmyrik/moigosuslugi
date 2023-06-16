@@ -31,7 +31,8 @@
 }
 
 .form__minbutton {
-  background: linear-gradient(0deg, #a19585 0%, #776951 51.59%, #3e3925 100%), #bf9854;
+  margin-top: 30px;
+  background: linear-gradient(0deg, #dc8e1f 0%, #f0b54f 51.59%, #f7e7ac 100%), #f0b54f;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
   width: 128px;
   height: 33px;
@@ -77,7 +78,8 @@
   background: #f2f2f2;
   box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.15);
   width: 100%;
-  padding: 20px 10px;
+  padding: 0px 10px;
+  position: relative;
   border-radius: 10px;
   color: #666666;
   &_left {
@@ -92,5 +94,93 @@
   .income__value {
     font-size: 26px;
     font-weight: 700;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #dddddd;
+    top: 0;
+    left: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #dddddd;
+    top: 50%;
+    left: 0;
+  }
+}
+.form-bottom_left_item {
+  flex: 0 1 50%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-bottom_left_item {
+  flex: 0 1 50%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  border-radius: 20px;
+  background: #f2f2f2;
+  box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+  color: #666666;
+  &__item {
+    flex: 0 1 50%;
+    height: 150px;
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 30px;
+  }
+  &__name {
+    font-weight: 600;
+    font-size: 14px;
+    flex: 1 1 auto;
+  }
+  &__value {
+    font-size: 20px;
+    input {
+      background: inherit;
+      padding-bottom: 30px;
+      font-size: 20px;
+      width: 50%;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #dddddd;
+    top: 0;
+    left: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #dddddd;
+    top: 50%;
+    left: 0;
   }
 }

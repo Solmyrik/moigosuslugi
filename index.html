@@ -363,13 +363,13 @@
                   <input type="number" class="phone sum" placeholder="введите число" />
                 </div>
               </div>
-              <div class="form__input input">
+              <!-- <div class="form__input input">
                 <h4 class="input__name">Общий доход семьи:</h4>
                 <div class="input__label">
                   <input type="number" class="phone customs" id="income" />
                 </div>
-              </div>
-              <div class="form__input input">
+              </div> -->
+              <!-- <div class="form__input input">
                 <h4 class="input__name">Количество членов семьи:</h4>
                 <div class="input__label">
                   <input type="number" class="phone customs" id="family-members" />
@@ -380,20 +380,64 @@
                 <div class="input__label">
                   <input type="number" class="phone customs" id="children" />
                 </div>
-              </div>
-              <div class="form-bottom">
+              </div> -->
+              <!-- <div class="form-bottom">
                 <div class="form__input input form-bottom_left">
-                  <div class="income">среднедушевой доход семьи:</div>
-                  <div class="income__value" id="income__value">0,00 ₽</div>
+                  <div class="income form-bottom_left_item">среднедушевой доход семьи:</div>
+                  <div class="income__value form-bottom_left_item" id="income__value">0,00 ₽</div>
                 </div>
 
-                <div class="form__input input"><div class="form__minbutton">Рассчитать</div></div>
+                <div class="form__input input form-bottom_right">
+                  <div class="form__minbutton">Рассчитать</div>
+                </div>
                 <div style="display: flex; align-items: center; gap: 10px" class="form__input">
                   <div class="income" id="result"></div>
                   <div style="font-size: 40px" class="income__numbers"></div>
                 </div>
+              </div> -->
+              <div style="display: none" class="income" id="result"></div>
+              <div class="bottom">
+                <div class="bottom__item">
+                  <div class="bottom__name">Общий доход семьи:</div>
+                  <div class="bottom__value">
+                    <input type="number" class="" id="income" />
+                  </div>
+                </div>
+                <div class="bottom__item">
+                  <div class="bottom__name">
+                    Количество членов <br />
+                    семьи:
+                  </div>
+                  <div class="bottom__value">
+                    <input type="number" class="phone customs" id="family-members" />
+                  </div>
+                </div>
+                <div class="bottom__item">
+                  <div class="bottom__name">Количество детей:</div>
+                  <div class="bottom__value">
+                    <input type="number" class="phone customs" id="children" />
+                  </div>
+                </div>
+                <div class="bottom__item">
+                  <div class="bottom__name">Вам полагается:</div>
+                  <div class="bottom__value">
+                    <div
+                      style="font-size: 40px; padding-bottom: 30px"
+                      class="income__numbers"
+                    ></div>
+                  </div>
+                </div>
               </div>
-
+              <div
+                style="display: none"
+                class="income__value form-bottom_left_item"
+                id="income__value"
+              >
+                0,00 ₽
+              </div>
+              <div class="form__input input form-bottom_right">
+                <div class="form__minbutton">Рассчитать</div>
+              </div>
               <div class="form__input input">
                 <div class="form__button">Отправить для анализа</div>
               </div>
