@@ -164,3 +164,9 @@ check6.addEventListener('change', (e) => {
     additional.classList.add('active');
   }
 });
+
+//count
+const MONTHS_IN_YEAR = 12;
+const LIVING_WAGE = 13000;
+
+const incomeInput = document.getElementById('income');
