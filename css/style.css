@@ -432,7 +432,7 @@ main {
 .main__container {
   padding-top: 70px;
   border-radius: 10px;
-  background: linear-gradient(45.08deg, #0044f2 0.13%, #0079f2 51.24%, #5edfff 100%, #20a6f9 100%), #138ff6;
+  background: linear-gradient(45.08deg, #0044f2 0.13%, #0079f2 51.24%, #4390d7 100%, #208cf9 100%), #138ff6;
   color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -719,6 +719,8 @@ main {
   line-height: 22px;
   opacity: 0.75;
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .change__item.active {
@@ -726,6 +728,8 @@ main {
   color: #000000;
   position: relative;
   cursor: auto;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .change__item.active:after {
@@ -737,6 +741,8 @@ main {
   height: 0;
   border-bottom: 48px solid #ffffff;
   border-left: 20px solid #ffffff00;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .change__item.active::before {
@@ -748,6 +754,8 @@ main {
   height: 0;
   border-top: 48px solid #ffffff;
   border-right: 20px solid #ffffff00;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .change__item_big {
