@@ -657,14 +657,15 @@ main {
 }
 
 .bottom__value {
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .bottom__value input {
   background: inherit;
   padding-bottom: 30px;
-  font-size: 20px;
-  width: 50%;
+  font-size: 35px;
+  width: 70%;
 }
 
 .bottom::before {
