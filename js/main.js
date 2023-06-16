@@ -196,7 +196,7 @@ const sumS = document.querySelectorAll('.sum');
 setInterval(() => {
   let currentSum = 0;
   sumS.forEach((sum) => {
-    currentSum = Number(currentSum) + Number(sum.value);
+    currentSum = Number(currentSum) + Number(sum.value) * 12;
   });
   incomeInput.value = currentSum;
 }, 1000);
