@@ -182,26 +182,27 @@ const calc = () => {
   const averageIncomeFamily = income / MONTHS_IN_YEAR;
   const averageIncome = averageIncomeFamily / familyMembers;
 
-  const childrenValue50 = 0.5 * LIVING_WAGE * (!children ? 1 : children);
-  const childrenValue75 = 0.75 * LIVING_WAGE * (!children ? 1 : children);
+  const childrenValue50 = 0.5 * 13000 * (!children ? 1 : children);
+  const childrenValue75 = 0.75 * 13000 * (!children ? 1 : children);
 
   const value75 = (averageIncomeFamily + childrenValue50) / familyMembers;
   const value100 = (averageIncomeFamily + childrenValue75) / familyMembers;
   handleFormInput();
   console.log(averageIncome, value75);
 
-  if (averageIncome <= LIVING_WAGE) {
-    if (value75 <= LIVING_WAGE) {
-      if (value100 <= LIVING_WAGE) {
+  if (averageIncome <= 13000) {
+    console.log(13000, averageIncome, value75);
+    if (value75 <= 13000) {
+      if (value100 <= 13000) {
         result = 'Положено семье 100%';
-        return;
+        // return;
       } else {
         result = 'Положено семье 75%';
-        return;
+        // return;
       }
     } else {
       result = 'Положено семье 50%';
-      return;
+      // return;
     }
   } else {
     result = 'У вас превышение дохода. Право на выплату отсутствует';
