@@ -530,3 +530,11 @@ main {
 .change__item:nth-child(1).active::after {
   display: none;
 }
+
+.none {
+  display: none;
+}
+
+.none.active {
+  display: block;
+}

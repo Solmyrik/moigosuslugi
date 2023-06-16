@@ -75,5 +75,73 @@ const changeChild = () => {
     child2[i].classList.add('active');
   }
 
-  console.log(index);
+  const childspensionHex = document.querySelector('.childspension-hex');
+  const childspension = document.querySelector('.childspension');
+  if (childspensionHex.className.includes('active') === true) {
+    childspension.classList.add('active');
+  } else {
+    childspension.classList.remove('active');
+  }
 };
+
+// checkboxes
+const check1 = document.querySelector('.checkbox-1');
+const salary = document.querySelector('.salary');
+
+const check2 = document.querySelector('.checkbox-2');
+const pension = document.querySelector('.pension');
+
+const check4 = document.querySelector('.checkbox-4');
+const check6 = document.querySelector('.checkbox-6');
+const additional = document.querySelector('.additional');
+const childspension = document.querySelector('.childspension');
+
+const check3 = document.querySelector('.checkbox-3');
+const self = document.querySelector('.self');
+
+const check5 = document.querySelector('.checkbox-5');
+const scholarship = document.querySelector('.scholarship');
+
+check1.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    salary.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    salary.classList.remove('active');
+  }
+});
+check2.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    pension.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    pension.classList.remove('active');
+  }
+});
+check3.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    self.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    self.classList.remove('active');
+  }
+});
+check5.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    scholarship.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    scholarship.classList.remove('active');
+  }
+});
+
+check4.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    additional.classList.add('active');
+  }
+});
+check6.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    additional.classList.add('active');
+  }
+});
