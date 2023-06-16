@@ -20,7 +20,7 @@
   }
 
   &__content {
-    padding: 0px 30px;
+    padding: 0px 10px;
     //  margin-bottom: 30px;
   }
 
@@ -43,9 +43,12 @@
   }
 
   &__slide {
-    flex: 0 0 100%;
+    padding: 0 5px;
+
+    flex: 0 0 33.333%;
     cursor: pointer;
     img {
+      border-radius: 10px;
       width: 100%;
     }
   }

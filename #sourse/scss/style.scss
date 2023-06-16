@@ -41,3 +41,23 @@ main {
 @import '_main';
 @import '_change';
 @import '_slider';
+
+.why {
+  &__container {
+    background-color: $white;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px 15px;
+    font-weight: 700;
+    font-size: 28px;
+  }
+}
+.regard {
+  &__container {
+    padding: 25px 15px;
+    // font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+  }
+}
