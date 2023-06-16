@@ -170,3 +170,63 @@ const MONTHS_IN_YEAR = 12;
 const LIVING_WAGE = 13000;
 
 const incomeInput = document.getElementById('income');
+const familyMembersInput = document.getElementById('family-members');
+const childrenInput = document.getElementById('children');
+const resultValue = document.getElementById('result');
+const incomeValue = document.getElementById('income__value');
+const calc = () => {
+  const income = parseFloat(incomeInput.value);
+  const familyMembers = parseInt(familyMembersInput.value);
+  const children = parseInt(childrenInput.value);
+
+  const averageIncomeFamily = income / MONTHS_IN_YEAR;
+  const averageIncome = averageIncomeFamily / familyMembers;
+
+  const childrenValue50 = 0.5 * LIVING_WAGE * (!children ? 1 : children);
+  const childrenValue75 = 0.75 * LIVING_WAGE * (!children ? 1 : children);
+
+  const value75 = (averageIncomeFamily + childrenValue50) / familyMembers;
+  const value100 = (averageIncomeFamily + childrenValue75) / familyMembers;
+  handleFormInput();
+
+  if (averageIncome <= LIVING_WAGE) {
+    if (value75 <= LIVING_WAGE) {
+      if (value100 <= LIVING_WAGE) {
+        result = 'Положено семье 100%';
+        return;
+      } else {
+        result = 'Положено семье 75%';
+        return;
+      }
+    } else {
+      result = 'Положено семье 50%';
+      return;
+    }
+  } else {
+    result = 'У вас превышение дохода. Право на выплату отсутствует';
+  }
+
+  console.log(result);
+  resultValue.textContent = result;
+};
+
+function handleFormInput() {
+  const income = parseFloat(incomeInput.value);
+  const familyMembers = parseInt(familyMembersInput.value);
+  console.log(income, familyMembers);
+  const value = parseInt(income / familyMembers / MONTHS_IN_YEAR);
+  const numberFormat = new Intl.NumberFormat('ru-RU', {
+    style: 'currency',
+    currency: 'RUB',
+  });
+
+  if (isNaN(value)) {
+    incomeValue.textContent = '0 ₽';
+  } else {
+    incomeValue.textContent = numberFormat.format(value);
+  }
+}
+
+const minuButton = document.querySelector('.form__minbutton');
+
+minuButton.addEventListener('click', calc);
