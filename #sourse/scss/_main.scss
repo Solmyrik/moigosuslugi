@@ -4,6 +4,7 @@
     margin: 0;
   }
   &__container {
+    overflow: hidden;
     padding-top: 70px;
     border-radius: 10px;
     background: linear-gradient(45.08deg, #0044f2 0.13%, #0079f2 51.24%, #4390d7 100%, #208cf9 100%),
