@@ -82,6 +82,14 @@ const changeChild = () => {
   } else {
     childspension.classList.remove('active');
   }
+
+  const widowallowanceHex = document.querySelector('.widowallowance-hex');
+  const widowallowance = document.querySelector('.widowallowance');
+  if (widowallowanceHex.className.includes('active') === true) {
+    widowallowance.classList.add('active');
+  } else {
+    widowallowance.classList.remove('active');
+  }
 };
 
 // checkboxes
@@ -101,6 +109,17 @@ const self = document.querySelector('.self');
 
 const check5 = document.querySelector('.checkbox-5');
 const scholarship = document.querySelector('.scholarship');
+
+const selectStatus = document.querySelector('.select-status');
+const widow = document.querySelector('.widow');
+
+selectStatus.addEventListener('change', (e) => {
+  if (e.target.value === 'Вдова') {
+    widow.classList.add('active');
+  } else {
+    widow.classList.remove('active');
+  }
+});
 
 check1.addEventListener('change', (e) => {
   if (e.currentTarget.checked === true) {

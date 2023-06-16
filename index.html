@@ -116,13 +116,20 @@
               <div class="form__input input">
                 <h4 class="input__name">Выберите семейное положение</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select">
+                  <select name="" id="" class="select select-status">
                     <option value="ЗАГС">ЗАГС</option>
                     <option value="Расторжение">Расторжение</option>
                     <option value="Вдова">Вдова</option>
                     <option value="Мать - одиночка">Мать - одиночка</option>
                     <option value="Замужем не была">Замужем не была</option>
                   </select>
+                </div>
+              </div>
+              <div class="form__item input change none widow">
+                <h4 class="input__name">Получают ли дети пособие по потере кормильца?</h4>
+                <div class="change__body change__body_big">
+                  <div class="change__item change__item_big widowallowance-hex">да</div>
+                  <div class="change__item change__item_big">нет</div>
                 </div>
               </div>
               <div class="input">
@@ -185,6 +192,66 @@
                   </label>
                 </div>
               </div>
+              <!-- <div class="input">
+                <h4 class="input__name">Выберите вид дохода супруга</h4>
+                <h4 class="input__subname">Можно выбрать несколько (если имеется)</h4>
+                <div class="input__checkbox">
+                  <input
+                    id="checkbox-1"
+                    class="checkbox-custom checkbox-1"
+                    name="checkbox-1"
+                    type="checkbox"
+                  />
+                  <label for="checkbox-1" class="checkbox-custom-label">Заработная плата</label>
+                </div>
+                <div class="input__checkbox">
+                  <input
+                    id="checkbox-2"
+                    class="checkbox-custom checkbox-2"
+                    name="checkbox-2"
+                    type="checkbox"
+                  />
+                  <label for="checkbox-2" class="checkbox-custom-label">Пенсия</label>
+                </div>
+                <div class="input__checkbox">
+                  <input
+                    id="checkbox-3"
+                    class="checkbox-custom checkbox-3"
+                    name="checkbox-3"
+                    type="checkbox"
+                  />
+                  <label for="checkbox-3" class="checkbox-custom-label">Самозанятость</label>
+                </div>
+                <div class="input__checkbox">
+                  <input
+                    id="checkbox-4"
+                    class="checkbox-custom checkbox-4"
+                    name="checkbox-4"
+                    type="checkbox"
+                  />
+                  <label for="checkbox-4" class="checkbox-custom-label">Доходы по ИП </label>
+                </div>
+                <div class="input__checkbox">
+                  <input
+                    id="checkbox-5"
+                    class="checkbox-custom checkbox-5"
+                    name="checkbox-5"
+                    type="checkbox"
+                  />
+                  <label for="checkbox-5" class="checkbox-custom-label">Стипендия </label>
+                </div>
+                <div class="input__checkbox">
+                  <input
+                    id="checkbox-6"
+                    class="checkbox-custom checkbox-6"
+                    name="checkbox-6"
+                    type="checkbox"
+                  />
+                  <label for="checkbox-6" class="checkbox-custom-label"
+                    >У меня нет никакого дохода
+                  </label>
+                </div>
+              </div> -->
               <div class="form__item input change">
                 <h4 class="input__name">
                   Ухаживаете ли или члены вашей семьи за инвалидами или пожилыми людьми?
@@ -274,11 +341,41 @@
                   <input type="number" class="phone" placeholder="введите число" />
                 </div>
               </div>
+              <div class="form__input input widowallowance none">
+                <h4 class="input__name">
+                  Общая сумма пособия по потере кормильца в месяц на всех детей
+                </h4>
+                <div class="input__label">
+                  <input type="number" class="phone" placeholder="введите число" />
+                </div>
+              </div>
               <div class="form__input input additional none">
                 <h4 class="input__name">Укажите имеющийся дополнительный доход вашей семьи</h4>
                 <div class="input__label">
                   <input type="number" class="phone" placeholder="введите число" />
                 </div>
+              </div>
+              <div class="form__input input">
+                <h4 class="input__name">Общий доход семьи:</h4>
+                <div class="input__label">
+                  <input type="number" class="phone" />
+                </div>
+              </div>
+              <div class="form__input input">
+                <h4 class="input__name">Количество членов семьи:</h4>
+                <div class="input__label">
+                  <input type="number" class="phone" />
+                </div>
+              </div>
+              <div class="form__input input">
+                <h4 class="input__name">Количество детей:</h4>
+                <div class="input__label">
+                  <input type="number" class="phone" />
+                </div>
+              </div>
+              <div class="form__input input">
+                <div class="income">среднедущевой доход семьи:</div>
+                <div class="income__value">0,00 ₽</div>
               </div>
             </div>
           </div>

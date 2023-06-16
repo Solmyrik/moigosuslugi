@@ -370,6 +370,11 @@ html {
   background-repeat: no-repeat;
 }
 
+.income {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .wrapper {
   overflow: hidden;
   display: -webkit-box;
