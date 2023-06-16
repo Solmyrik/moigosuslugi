@@ -188,6 +188,7 @@ const calc = () => {
   const value75 = (averageIncomeFamily + childrenValue50) / familyMembers;
   const value100 = (averageIncomeFamily + childrenValue75) / familyMembers;
   handleFormInput();
+  console.log(averageIncome, value75);
 
   if (averageIncome <= LIVING_WAGE) {
     if (value75 <= LIVING_WAGE) {
@@ -213,7 +214,6 @@ const calc = () => {
 function handleFormInput() {
   const income = parseFloat(incomeInput.value);
   const familyMembers = parseInt(familyMembersInput.value);
-  console.log(income, familyMembers);
   const value = parseInt(income / familyMembers / MONTHS_IN_YEAR);
   const numberFormat = new Intl.NumberFormat('ru-RU', {
     style: 'currency',
