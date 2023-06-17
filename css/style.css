@@ -135,7 +135,7 @@ html {
 
 .input__name {
   font-weight: 700;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 22px;
   opacity: 0.5;
   margin-bottom: 7px;
@@ -934,47 +934,4 @@ main {
   height: 8px;
   width: 120%;
   margin: 20px 0px;
-}
-
-@-webkit-keyframes glowing {
-  0% {
-    -webkit-box-shadow: 0 0 -40px #cfd4e6;
-            box-shadow: 0 0 -40px #cfd4e6;
-  }
-  40% {
-    -webkit-box-shadow: 0 0 40px #cfd4e6;
-            box-shadow: 0 0 40px #cfd4e6;
-  }
-  60% {
-    -webkit-box-shadow: 0 0 40px #cfd4e6;
-            box-shadow: 0 0 40px #cfd4e6;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 -40px #cfd4e6;
-            box-shadow: 0 0 -40px #cfd4e6;
-  }
-}
-
-@keyframes glowing {
-  0% {
-    -webkit-box-shadow: 0 0 -40px #cfd4e6;
-            box-shadow: 0 0 -40px #cfd4e6;
-  }
-  40% {
-    -webkit-box-shadow: 0 0 40px #cfd4e6;
-            box-shadow: 0 0 40px #cfd4e6;
-  }
-  60% {
-    -webkit-box-shadow: 0 0 40px #cfd4e6;
-            box-shadow: 0 0 40px #cfd4e6;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 -40px #cfd4e6;
-            box-shadow: 0 0 -40px #cfd4e6;
-  }
-}
-
-.button-glow {
-  -webkit-animation: glowing 4000ms infinite;
-          animation: glowing 4000ms infinite;
 }
