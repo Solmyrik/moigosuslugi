@@ -237,19 +237,19 @@ const calc = () => {
         result = 'Положено семье ';
         resultNumber = '100%';
         incomeNumber.classList.remove('min');
-        IncomeSize.textContent = 'Выплата в размере:';
+        // IncomeSize.textContent = 'Выплата в размере:';
         // return;
       } else {
         result = 'Положено семье ';
         resultNumber = '75%';
         incomeNumber.classList.remove('min');
-        IncomeSize.textContent = 'Выплата в размере:';
+        // IncomeSize.textContent = 'Выплата в размере:';
         // return;
       }
     } else {
       result = 'Положено семье ';
       resultNumber = '50%';
-      IncomeSize.textContent = 'Выплата в размере:';
+      // IncomeSize.textContent = 'Выплата в размере:';
       incomeNumber.classList.remove('min');
       // return;
     }

@@ -28,6 +28,9 @@
     opacity: 0.75;
     cursor: pointer;
     // transition: all 0.5s;
+    &_m {
+      flex: 0 1 16.666%;
+    }
     &.active {
       background-color: $white;
       color: $black;
