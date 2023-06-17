@@ -281,7 +281,11 @@ const glow = document.querySelectorAll('.glow');
 
 const searchIndex = (i) => {
   let check = true;
-  const parent = glow[i + 1].parentElement;
+  const parent = glow[i + 1]?.parentElement;
+  if (!parent) {
+    glow[i].classList.remove('button-glow');
+    return;
+  }
   const granParent = parent.parentElement;
   if (granParent.className.includes('child-2')) {
     if (granParent.className.includes('active') === false) {
@@ -305,8 +309,14 @@ const searchIndex = (i) => {
     if (granParent.className.includes('active') === false) {
       while (check) {
         i += 1;
-        const parent = glow[i + 1].parentElement;
+        const parent = glow[i + 1]?.parentElement;
+        console.log(parent);
+        if (!parent) {
+          glow[i].classList.remove('button-glow');
+          break;
+        }
         const granParent = parent.parentElement;
+
         if (granParent.className.includes('none')) {
           if (granParent.className.includes('active') === false) {
             console.log('ok');
