@@ -31,13 +31,15 @@ const changeChild = () => {
     }
   }
   for (let i = 0; i < childrenMember.length; i++) {
-    if (childrenMember[i].className === 'change__item active') {
+    if (childrenMember[i].className === 'change__item change__item_m active') {
       indexMember = i - 1;
     }
   }
 
   childrenInput.textContent = index + 2;
   familyMembersInput.textContent = indexMember + 3;
+
+  console.log(indexMember + 3);
 
   child2.forEach((e) => {
     e.classList.remove('active');
