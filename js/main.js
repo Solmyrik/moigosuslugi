@@ -1,5 +1,3 @@
-alert('Мой вотсап: https://api.whatsapp.com/send?phone=79644939332');
-
 const incomeInput = document.getElementById('income');
 const familyMembersInput = document.getElementById('family-members');
 const childrenInput = document.getElementById('children');
@@ -37,7 +35,7 @@ const changeChild = () => {
     }
   }
 
-  childrenInput.value = index + 2;
+  childrenInput.textContent = index + 2;
   familyMembersInput.textContent = indexMember + 3;
 
   child2.forEach((e) => {
@@ -205,7 +203,7 @@ setInterval(() => {
       currentSum = Number(currentSum) + Number(sum.value) * 12;
     }
   });
-  incomeInput.textContent = currentSum;
+  incomeInput.textContent = Math.round(currentSum);
 }, 1000);
 
 //count
@@ -218,7 +216,7 @@ const calc = () => {
   const incomeNumber = document.querySelector('.income__numbers');
   const income = parseFloat(incomeInput.textContent);
   const familyMembers = parseInt(familyMembersInput.textContent);
-  const children = parseInt(childrenInput.value);
+  const children = parseInt(childrenInput.textContent);
 
   const averageIncomeFamily = income / MONTHS_IN_YEAR;
   const averageIncome = averageIncomeFamily / familyMembers;
