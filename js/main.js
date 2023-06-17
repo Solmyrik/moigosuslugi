@@ -1,3 +1,5 @@
+alert('Мой вотсап: https://api.whatsapp.com/send?phone=79644939332');
+
 const incomeInput = document.getElementById('income');
 const familyMembersInput = document.getElementById('family-members');
 const childrenInput = document.getElementById('children');
@@ -36,7 +38,7 @@ const changeChild = () => {
   }
 
   childrenInput.value = index + 2;
-  familyMembersInput.value = indexMember + 3;
+  familyMembersInput.textContent = indexMember + 3;
 
   child2.forEach((e) => {
     e.classList.remove('active');
@@ -203,7 +205,7 @@ setInterval(() => {
       currentSum = Number(currentSum) + Number(sum.value) * 12;
     }
   });
-  incomeInput.value = currentSum;
+  incomeInput.textContent = currentSum;
 }, 1000);
 
 //count
@@ -214,8 +216,8 @@ const calc = () => {
   let result = '';
   let resultNumber = '';
   const incomeNumber = document.querySelector('.income__numbers');
-  const income = parseFloat(incomeInput.value);
-  const familyMembers = parseInt(familyMembersInput.value);
+  const income = parseFloat(incomeInput.textContent);
+  const familyMembers = parseInt(familyMembersInput.textContent);
   const children = parseInt(childrenInput.value);
 
   const averageIncomeFamily = income / MONTHS_IN_YEAR;
@@ -258,8 +260,8 @@ const calc = () => {
 };
 
 function handleFormInput() {
-  const income = parseFloat(incomeInput.value);
-  const familyMembers = parseInt(familyMembersInput.value);
+  const income = parseFloat(incomeInput.textContent);
+  const familyMembers = parseInt(familyMembersInput.textContent);
   const value = parseInt(income / familyMembers / MONTHS_IN_YEAR);
   const numberFormat = new Intl.NumberFormat('ru-RU', {
     style: 'currency',
