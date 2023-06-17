@@ -301,6 +301,41 @@ const searchIndex = (i) => {
       }
     }
   }
+  if (granParent.className.includes('none')) {
+    if (granParent.className.includes('active') === false) {
+      while (check) {
+        i += 1;
+        const parent = glow[i + 1].parentElement;
+        const granParent = parent.parentElement;
+        if (granParent.className.includes('none')) {
+          if (granParent.className.includes('active') === false) {
+            console.log('ok');
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+    }
+  }
+  if (parent.className.includes('none')) {
+    if (parent.className.includes('active') === false) {
+      while (check) {
+        i += 1;
+        const parent = glow[i + 1].parentElement;
+        if (parent.className.includes('none')) {
+          if (parent.className.includes('active') === false) {
+            console.log('ok');
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+    }
+  }
   return i;
 };
 
