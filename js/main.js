@@ -88,8 +88,10 @@ const check13 = document.querySelector('.checkbox-13');
 const self = document.querySelector('.self');
 
 const check5 = document.querySelector('.checkbox-5');
+const check55 = document.querySelector('.checkbox-55');
 const check15 = document.querySelector('.checkbox-15');
 const scholarship = document.querySelector('.scholarship');
+const ndfl = document.querySelector('.ndfl');
 
 const selectStatus = document.querySelector('.select-status');
 const widow = document.querySelector('.widow');
@@ -163,6 +165,14 @@ check5.addEventListener('change', (e) => {
     additional.classList.add('active');
   } else {
     scholarship.classList.remove('active');
+  }
+});
+check55.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    ndfl.classList.add('active');
+    additional.classList.add('active');
+  } else {
+    ndfl.classList.remove('active');
   }
 });
 check15.addEventListener('change', (e) => {
