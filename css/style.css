@@ -963,7 +963,7 @@ main {
 .change__line::after {
   content: '';
   position: absolute;
-  background: #25719f;
+  background: #0079f2;
   height: 126%;
   width: 4px;
   top: -8%;
