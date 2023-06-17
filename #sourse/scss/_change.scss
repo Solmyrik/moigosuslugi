@@ -28,35 +28,44 @@
     opacity: 0.75;
     cursor: pointer;
     transition: all 0.5s;
+    &:after {
+      content: '';
+      //   background-color: $white;
+      position: absolute;
+      top: 0;
+      left: -20px;
+      width: 0;
+      opacity: 0;
+      height: 0;
+      border-bottom: 48px solid $white;
+      border-left: 20px solid #ffffff00;
+      transition: all 0.5s;
+      display: none;
+    }
+    &::before {
+      content: '';
+      //   background-color: $white;
+      position: absolute;
+      top: 0;
+      right: -20px;
+      width: 0;
+      opacity: 0;
+      height: 0;
+      border-top: 48px solid $white;
+      border-right: 20px solid #ffffff00;
+      transition: all 0.5s;
+      display: none;
+    }
     &.active {
       background-color: $white;
       color: $black;
       position: relative;
       cursor: auto;
       transition: all 0.5s;
-      &:after {
-        content: '';
-        //   background-color: $white;
-        position: absolute;
-        top: 0;
-        left: -20px;
-        width: 0;
-        height: 0;
-        border-bottom: 48px solid $white;
-        border-left: 20px solid #ffffff00;
-        transition: all 0.5s;
-      }
-      &::before {
-        content: '';
-        //   background-color: $white;
-        position: absolute;
-        top: 0;
-        right: -20px;
-        width: 0;
-        height: 0;
-        border-top: 48px solid $white;
-        border-right: 20px solid #ffffff00;
-        transition: all 0.5s;
+      &::before,
+      &::after {
+        opacity: 1;
+        display: block;
       }
     }
     &_big {
