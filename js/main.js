@@ -1,6 +1,7 @@
 const incomeInput = document.getElementById('income');
 const familyMembersInput = document.getElementById('family-members');
 const childrenInput = document.getElementById('children');
+const IncomeSize = document.querySelector('.income__size');
 const resultValue = document.getElementById('result');
 const incomeValue = document.getElementById('income__value');
 
@@ -236,22 +237,26 @@ const calc = () => {
         result = 'Положено семье ';
         resultNumber = '100%';
         incomeNumber.classList.remove('min');
+        IncomeSize.textContent = 'Выплата в размере:';
         // return;
       } else {
         result = 'Положено семье ';
         resultNumber = '75%';
         incomeNumber.classList.remove('min');
+        IncomeSize.textContent = 'Выплата в размере:';
         // return;
       }
     } else {
       result = 'Положено семье ';
       resultNumber = '50%';
+      IncomeSize.textContent = 'Выплата в размере:';
       incomeNumber.classList.remove('min');
       // return;
     }
   } else {
     result = 'У вас превышение дохода. Право на выплату отсутствует';
     resultNumber = 'У вас превышение дохода. Право на выплату отсутствует';
+    IncomeSize.textContent = '';
     incomeNumber.classList.add('min');
   }
 

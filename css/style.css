@@ -721,8 +721,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 45px;
   gap: 30px;
+  position: relative;
 }
 
 .bottom__name {
@@ -940,4 +942,5 @@ main {
 .min {
   font-size: 13px;
   font-family: 'Raleway', sans-serif;
+  letter-spacing: normal;
 }

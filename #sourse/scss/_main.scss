@@ -148,13 +148,16 @@
     display: flex;
     // align-items: center;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 45px;
     gap: 30px;
+    position: relative;
   }
   &__name {
     font-weight: 600;
     font-size: 14px;
     flex: 1 1 auto;
+    // margin-bottom: 30px;
   }
   &__value {
     font-size: 30px;
