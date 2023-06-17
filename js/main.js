@@ -88,14 +88,52 @@ const check13 = document.querySelector('.checkbox-13');
 const self = document.querySelector('.self');
 
 const check5 = document.querySelector('.checkbox-5');
+const check7 = document.querySelector('.checkbox-7');
+const check8 = document.querySelector('.checkbox-8');
+const check9 = document.querySelector('.checkbox-9');
+const check10 = document.querySelector('.checkbox-10');
 const check55 = document.querySelector('.checkbox-55');
 const check15 = document.querySelector('.checkbox-15');
 const scholarship = document.querySelector('.scholarship');
 const ndfl = document.querySelector('.ndfl');
+const house = document.querySelector('.house');
+const apartment = document.querySelector('.apartment');
+const area = document.querySelector('.area');
+const car = document.querySelector('.car');
+const carOld = document.querySelector('.car-old');
+const carHourse = document.querySelector('.car-hourse');
+const houseAll = document.querySelector('.house-all');
+const apartmentAll = document.querySelector('.apartment-all');
 
 const selectStatus = document.querySelector('.select-status');
 const widow = document.querySelector('.widow');
 const spouseChecks = document.querySelector('.spouse-checks');
+
+house.addEventListener('change', (e) => {
+  if (e.target.value > 1) {
+    houseAll.classList.add('active');
+  } else {
+    houseAll.classList.remove('active');
+  }
+});
+
+apartment.addEventListener('change', (e) => {
+  if (e.target.value > 1) {
+    apartmentAll.classList.add('active');
+  } else {
+    apartmentAll.classList.remove('active');
+  }
+});
+
+car.addEventListener('change', (e) => {
+  if (e.target.value == 1) {
+    carOld.classList.add('active');
+    carHourse.classList.add('active');
+  } else {
+    carOld.classList.remove('active');
+    carHourse.classList.remove('active');
+  }
+});
 
 selectStatus.addEventListener('change', (e) => {
   if (e.target.value === 'Вдова') {
@@ -119,6 +157,41 @@ check1.addEventListener('change', (e) => {
     salary.classList.remove('active');
   }
 });
+
+check7.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    house.classList.add('active');
+  } else {
+    house.classList.remove('active');
+  }
+});
+
+check8.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    apartment.classList.add('active');
+  } else {
+    apartment.classList.remove('active');
+  }
+});
+check9.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    area.classList.add('active');
+  } else {
+    area.classList.remove('active');
+  }
+});
+check10.addEventListener('change', (e) => {
+  if (e.currentTarget.checked === true) {
+    car.classList.add('active');
+    carOld.classList.add('active');
+    carHourse.classList.add('active');
+  } else {
+    car.classList.remove('active');
+    carOld.classList.remove('active');
+    carHourse.classList.remove('active');
+  }
+});
+
 check11.addEventListener('change', (e) => {
   if (e.currentTarget.checked === true) {
     spouse.classList.add('active');
