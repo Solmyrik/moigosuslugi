@@ -103,3 +103,18 @@ main {
 .select {
   color: #ffffffd6;
 }
+
+.change__line {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    background: #25719f;
+    height: 126%;
+    width: 4px;
+    top: -8%;
+    left: 49%;
+    -webkit-transform: rotate(22deg);
+    transform: rotate(22deg);
+  }
+}
