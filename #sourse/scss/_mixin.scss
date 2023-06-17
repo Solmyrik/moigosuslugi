@@ -86,6 +86,9 @@ $black: #000000;
     left: 16px;
     top: 50%;
     transform: translate(0, -50%);
+    img {
+      width: 16px;
+    }
   }
 
   span {

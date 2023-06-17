@@ -220,6 +220,10 @@ html {
           transform: translate(0, -50%);
 }
 
+.input__icon img {
+  width: 16px;
+}
+
 .input span {
   position: relative;
 }
