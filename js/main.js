@@ -235,20 +235,24 @@ const calc = () => {
       if (value100 <= 13000) {
         result = 'Положено семье ';
         resultNumber = '100%';
+        incomeNumber.classList.remove('min');
         // return;
       } else {
         result = 'Положено семье ';
         resultNumber = '75%';
+        incomeNumber.classList.remove('min');
         // return;
       }
     } else {
       result = 'Положено семье ';
       resultNumber = '50%';
+      incomeNumber.classList.remove('min');
       // return;
     }
   } else {
     result = 'У вас превышение дохода. Право на выплату отсутствует';
-    resultNumber = '0%';
+    resultNumber = 'У вас превышение дохода. Право на выплату отсутствует';
+    incomeNumber.classList.add('min');
   }
 
   console.log(result);
