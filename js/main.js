@@ -530,7 +530,10 @@ function countingCar(familyMembers) {
     return false;
   } else {
     console.log(age, carHourseInput.value);
-    if (age >= 5 && carHourseInput.value <= 250) {
+    if (age <= 5 && carHourseInput.value <= 250) {
+      return true;
+    }
+    if (age >= 5) {
       return true;
     } else {
       false;
