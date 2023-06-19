@@ -3,20 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="choices/choices.min.css" />
+    <title>Мои госуслуги</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <script defer src="choices/choices.min.js"></script>
-     -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script defer src="js/mask.js"></script>
     <script defer src="js/slider.js"></script>
     <script defer src="js/main.js"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+      ym(94037468, 'init', {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/94037468"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
   </head>
   <body>
     <div class="wrapper">
       <main class="page">
-        <section class="slider">
+        <!-- <section class="slider">
           <div class="slider__container">
             <h2 class="slider__title">Важная информация</h2>
             <div class="slider__content">
@@ -53,16 +90,16 @@
               вам положен на самом деле
             </h2>
           </div>
-        </section>
-        <section class="regard">
+        </section> -->
+        <!-- <section class="regard">
           <div class="regard__container">Посчитайте на нашем калькуляторе</div>
-        </section>
+        </section> -->
         <section class="main">
           <div class="main__container">
             <div class="main__logo">
-              <img src="img/logo.png" alt="logo" />
+              <img src="img/logo2.png" alt="logo" />
             </div>
-            <h1 class="main__title">Мои госуслуги</h1>
+            <!-- <h1 class="main__title">Мои госуслуги</h1> -->
             <div class="main__form form">
               <div class="form__input input">
                 <h4 class="input__name">Укажите ваше имя</h4>
@@ -70,7 +107,11 @@
                   <div class="input__icon">
                     <img src="img/icons/person.svg" alt="person" />
                   </div>
-                  <input type="text" placeholder="Введите имя" class="button-glow glow" />
+                  <input
+                    type="text"
+                    placeholder="Введите имя"
+                    class="button-glow glow name-person"
+                  />
                 </div>
               </div>
               <div class="form__input input">
@@ -79,7 +120,20 @@
                   <div class="input__icon">
                     <img src="img/icons/phone.svg" alt="phone" />
                   </div>
-                  <input type="tel" data-tel-input class="phone glow" value="+7" />
+                  <input type="tel" data-tel-input class="phone glow phone-person" value="+7" />
+                </div>
+              </div>
+              <div class="form__input input">
+                <h4 class="input__name">Укажите вашy электронную почту</h4>
+                <div class="input__label">
+                  <div class="input__icon">
+                    <img src="img/icons/email.svg" alt="person" />
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Введите ваш email"
+                    class="button-glow glow email-person"
+                  />
                 </div>
               </div>
               <div class="line"></div>
@@ -107,7 +161,8 @@
               <div class="form__input input">
                 <h4 class="input__name">Выберите возраст ребенка</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow" placeholder="lol">
+                  <select name="" id="" class="select glow select-c1" placeholder="lol">
+                    <option value="0">Выберите возраст...</option>
                     <option value="3">0 - 3 года</option>
                     <option value="8">3 - 8 лет</option>
                     <option value="17">8 - 17 лет</option>
@@ -118,7 +173,8 @@
               <div class="form__input input child-2">
                 <h4 class="input__name">Выберите возраст второго ребенка</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow">
+                  <select name="" id="" class="select glow select-c2">
+                    <option value="0">Выберите возраст...</option>
                     <option value="3">0 - 3 года</option>
                     <option value="8">3 - 8 лет</option>
                     <option value="17">8 - 17 лет</option>
@@ -129,7 +185,8 @@
               <div class="form__input input child-2">
                 <h4 class="input__name">Выберите возраст третьего ребенка</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow">
+                  <select name="" id="" class="select glow select-c3">
+                    <option value="0">Выберите возраст...</option>
                     <option value="3">0 - 3 года</option>
                     <option value="8">3 - 8 лет</option>
                     <option value="17">8 - 17 лет</option>
@@ -140,7 +197,8 @@
               <div class="form__input input child-2">
                 <h4 class="input__name">Выберите возраст четвертого ребенка</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow">
+                  <select name="" id="" class="select glow select-c4">
+                    <option value="0">Выберите возраст...</option>
                     <option value="3">0 - 3 года</option>
                     <option value="8">3 - 8 лет</option>
                     <option value="17">8 - 17 лет</option>
@@ -151,7 +209,8 @@
               <div class="form__input input child-2">
                 <h4 class="input__name">Выберите возраст пятого ребенка</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow">
+                  <select name="" id="" class="select glow select-c5">
+                    <option value="0">Выберите возраст...</option>
                     <option value="3">0 - 3 года</option>
                     <option value="8">3 - 8 лет</option>
                     <option value="17">8 - 17 лет</option>
@@ -555,30 +614,6 @@
                   />
                 </div>
               </div>
-              <div class="form__input input car-old-2 none">
-                <h4 class="input__name">Укажите год выпуска вашего второго автомобиля</h4>
-                <div class="input__label">
-                  <div class="input__icon">
-                    <img src="img/icons/calendar.svg" alt="calendar" />
-                  </div>
-                  <input type="number" class="phone car-year-2" placeholder="введите год выпуска" />
-                </div>
-              </div>
-              <div class="form__input input car-hourse-2 none">
-                <h4 class="input__name">
-                  Укажите количество лошадиных сил вашего второго автомобиля
-                </h4>
-                <div class="input__label">
-                  <div class="input__icon">
-                    <img src="img/icons/horse.svg" alt="horse" />
-                  </div>
-                  <input
-                    type="number"
-                    class="phone car-hourse-value-2"
-                    placeholder="введите количество л/c"
-                  />
-                </div>
-              </div>
 
               <!-- <div class="form__input input">
                 <h4 class="input__name">Общий доход семьи:</h4>
@@ -652,15 +687,30 @@
               >
                 0,00 ₽
               </div>
+              <div class="line"></div>
+              <div class="reasons none">
+                <div class="reasons__title">УВАЖИТЕЛЬНЫЕ ПРИЧИНЫ ИМЕЮЩИЕСЯ У ВАШЕЙ СЕМЬИ</div>
+                <div class="reasons__reasons">Многодетность для одного из родителей</div>
+              </div>
               <div class="form__input input form-bottom_right">
                 <div class="form__minbutton">Рассчитать</div>
               </div>
-              <div class="form__input input">
+              <div style="display: none" class="form__input input">
                 <div class="form__button">Отправить для анализа</div>
               </div>
+              <!-- <div class="phone__icons">
+                <a href="tel:89645700262" class="phone__icon">
+                  <img src="img/phone.png" alt="phone" />
+                </a>
+              </div> -->
             </div>
           </div>
         </section>
+        <div class="phone__icons">
+          <a href="tel:89645700262" class="phone__icon">
+            <img src="img/phone.png" alt="phone" />
+          </a>
+        </div>
       </main>
     </div>
   </body>

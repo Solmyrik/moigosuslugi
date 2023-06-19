@@ -4,6 +4,10 @@ const childrenInput = document.getElementById('children');
 const IncomeSize = document.querySelector('.income__size');
 const resultValue = document.getElementById('result');
 const incomeValue = document.getElementById('income__value');
+const button = document.querySelector('.form__button');
+
+let isProperty = '';
+let isPercentages = '';
 
 // change__body
 const changeBody = document.querySelectorAll('.change__body');
@@ -18,6 +22,31 @@ changeBody.forEach((ch) => {
     changeChild();
   });
 });
+
+const reasons = document.querySelector('.reasons');
+const reasonsText = document.querySelector('.reasons__reasons');
+
+const selectC1 = document.querySelector('.select-c1');
+const selectC2 = document.querySelector('.select-c2');
+const selectC3 = document.querySelector('.select-c3');
+const selectC4 = document.querySelector('.select-c4');
+const selectC5 = document.querySelector('.select-c5');
+
+selectC1.addEventListener('change', selectChildChange);
+
+function selectChildChange(e) {
+  if (e.target.value == 3) {
+    reasons.classList.add('active');
+    reasonsText.textContent = 'Уход за ребенком до 3-х лет в расчетном периоде';
+  } else {
+    reasons.classList.remove('active');
+  }
+  if (selectC1.value == 3) reasons.classList.add('active');
+  if (selectC2.value == 3) reasons.classList.add('active');
+  if (selectC3.value == 3) reasons.classList.add('active');
+  if (selectC4.value == 3) reasons.classList.add('active');
+  if (selectC5.value == 3) reasons.classList.add('active');
+}
 
 const changeChild = () => {
   let index = null;
@@ -38,6 +67,13 @@ const changeChild = () => {
 
   childrenInput.textContent = index + 2;
   familyMembersInput.textContent = indexMember + 3;
+
+  if (index + 2 > 2) {
+    reasons.classList.add('active');
+    reasonsText.textContent = 'Многодетность для одного из родителей';
+  } else {
+    reasons.classList.remove('active');
+  }
 
   console.log(indexMember + 3);
 
@@ -131,19 +167,9 @@ car.addEventListener('change', (e) => {
   if (e.target.value == 1) {
     carOld.classList.add('active');
     carHourse.classList.add('active');
-    carOld2.classList.remove('active');
-    carHourse2.classList.remove('active');
-  }
-  if (e.target.value == 2) {
-    carOld.classList.add('active');
-    carHourse.classList.add('active');
-    carOld2.classList.add('active');
-    carHourse2.classList.add('active');
   } else {
     carOld.classList.remove('active');
     carHourse.classList.remove('active');
-    carOld2.classList.remove('active');
-    carHourse2.classList.remove('active');
   }
 });
 
@@ -334,18 +360,21 @@ const calc = () => {
         result = 'Положено семье ';
         resultNumber = '100%';
         incomeNumber.classList.remove('min');
+        isPercentages = '100%';
         // IncomeSize.textContent = 'Выплата в размере:';
         // return;
       } else {
         result = 'Положено семье ';
         resultNumber = '75%';
         incomeNumber.classList.remove('min');
+        isPercentages = '75%';
         // IncomeSize.textContent = 'Выплата в размере:';
         // return;
       }
     } else {
       result = 'Положено семье ';
       resultNumber = '50%';
+      isPercentages = '50%';
       // IncomeSize.textContent = 'Выплата в размере:';
       incomeNumber.classList.remove('min');
       // return;
@@ -353,6 +382,7 @@ const calc = () => {
   } else {
     result = 'У вас превышение дохода. Право на выплату отсутствует';
     resultNumber = 'У вас превышение дохода. Право на выплату отсутствует';
+    isPercentages = '0%';
     IncomeSize.textContent = '';
     incomeNumber.classList.add('min');
   }
@@ -362,14 +392,17 @@ const calc = () => {
 
   if (checkin === true) {
     checkingText.textContent = 'Ваше имущество позволяет получить выплату';
+    isProperty = true;
   } else {
     checkingText.textContent = 'Ваше имущество не позволяет получить выплату';
+    isProperty = false;
   }
 
   if (result == 'У вас превышение дохода. Право на выплату отсутствует') {
     checkingText.textContent = '';
   }
 
+  button.click();
   console.log(result);
   resultValue.textContent = result;
   incomeNumber.textContent = resultNumber;
@@ -556,3 +589,46 @@ function countingCar(familyMembers) {
     }
   }
 }
+
+const phoneInput = document.querySelector('.phone-person');
+const nameInput = document.querySelector('.name-person');
+const emailInput = document.querySelector('.email-person');
+const childspensionHex = document.querySelector('.childspension-hex');
+
+button.onclick = async (e) => {
+  let currentName = nameInput.value;
+  let currentEmail = emailInput.value;
+  let currentPhone = phoneInput.value;
+  const children = parseInt(childrenInput.textContent);
+  const disabled = childspensionHex.className.includes('active') === true ? 'да' : 'нет';
+  const hourseSelect1 = house.className.includes('active') === true ? hourseSelect.value : 0;
+  const apartamentSelect1 =
+    apartment.className.includes('active') === true ? apartamentSelect.value : 0;
+  const carSelect1 = car.className.includes('active') === true ? carSelect.value : 0;
+
+  console.log(currentPhone, currentEmail);
+  let formData = new FormData();
+  formData.append('currentPhone', currentPhone);
+  formData.append('currentName', currentName);
+  formData.append('currentEmail', currentEmail);
+  formData.append('children', children);
+  formData.append('incomeInput', incomeInput.textContent);
+  formData.append('familyMembersInput', familyMembersInput.textContent);
+  formData.append('hourseSelect', hourseSelect1);
+  formData.append('apartamentSelect', apartamentSelect1);
+  formData.append('hourseMetersInput', hourseMetersInput.value);
+  formData.append('areaMetersInput', areaMetersInput.value);
+  formData.append('apartmentMetersInput', apartmentMetersInput.value);
+  formData.append('carSelect', carSelect1);
+  formData.append('carYearInput', carYearInput.value);
+  formData.append('carHourseInput', carHourseInput.value);
+  formData.append('disabled', disabled);
+  let responce = await fetch('sendmail.php', {
+    method: 'POST',
+    body: formData,
+  });
+  // alert('Ваша заявка отправлена');
+  // thanksPopup();
+  // inputNameOne.value = '';
+  // inputTelOne.value = '';
+};
