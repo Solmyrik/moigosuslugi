@@ -401,6 +401,20 @@
                   <div class="change__item change__item_big">нет</div>
                 </div>
               </div>
+              <div class="form__input input childspension none">
+                <h4 class="input__name">Размер пенсии ребенка</h4>
+                <div class="input__label">
+                  <input type="number" class="phone sum glow" placeholder="введите сумму" />
+                </div>
+              </div>
+              <div class="form__input input widowallowance none">
+                <h4 class="input__name">
+                  Общая сумма пособия по потере кормильца в месяц на всех детей
+                </h4>
+                <div class="input__label">
+                  <input type="number" class="phone glow" placeholder="введите сумму" />
+                </div>
+              </div>
               <div class="line"></div>
               <div class="input">
                 <h4 class="input__name">
@@ -447,7 +461,7 @@
               <div class="form__input input none house">
                 <h4 class="input__name">Сколько домов в вашей собственности?</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow" placeholder="lol">
+                  <select name="" id="" class="select glow hourse-select" placeholder="lol">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -461,14 +475,18 @@
                   <div class="input__icon">
                     <img src="img/icons/house.svg" alt="house" />
                   </div>
-                  <input type="number" class="phone" placeholder="введите количество м²" />
+                  <input
+                    type="number"
+                    class="phone house-meters"
+                    placeholder="введите количество м²"
+                  />
                 </div>
               </div>
 
               <div class="form__input input none apartment">
                 <h4 class="input__name">Сколько квартир в вашей собственности?</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow" placeholder="lol">
+                  <select name="" id="" class="select glow apartament-select" placeholder="lol">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -482,7 +500,11 @@
                   <div class="input__icon">
                     <img src="img/icons/apartment.svg" alt="apartment" />
                   </div>
-                  <input type="number" class="phone" placeholder="введите количество м²" />
+                  <input
+                    type="number"
+                    class="phone apartament-meters"
+                    placeholder="введите количество м²"
+                  />
                 </div>
               </div>
 
@@ -492,14 +514,18 @@
                   <div class="input__icon">
                     <img src="img/icons/area.svg" alt="area" />
                   </div>
-                  <input type="number" class="phone" placeholder="введите количество соток" />
+                  <input
+                    type="number"
+                    class="phone area-meters"
+                    placeholder="введите количество соток"
+                  />
                 </div>
               </div>
 
               <div class="form__input input none car">
                 <h4 class="input__name">Сколько автомобилей в вашей собственности?</h4>
                 <div class="input__label">
-                  <select name="" id="" class="select glow" placeholder="lol">
+                  <select name="" id="" class="select glow car-select" placeholder="lol">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -513,7 +539,7 @@
                   <div class="input__icon">
                     <img src="img/icons/calendar.svg" alt="calendar" />
                   </div>
-                  <input type="number" class="phone" placeholder="введите год выпуска" />
+                  <input type="number" class="phone car-year" placeholder="введите год выпуска" />
                 </div>
               </div>
               <div class="form__input input car-hourse none">
@@ -522,22 +548,11 @@
                   <div class="input__icon">
                     <img src="img/icons/horse.svg" alt="horse" />
                   </div>
-                  <input type="number" class="phone" placeholder="введите количество л/c" />
-                </div>
-              </div>
-
-              <div class="form__input input childspension none">
-                <h4 class="input__name">Размер пенсии ребенка</h4>
-                <div class="input__label">
-                  <input type="number" class="phone sum glow" placeholder="введите сумму" />
-                </div>
-              </div>
-              <div class="form__input input widowallowance none">
-                <h4 class="input__name">
-                  Общая сумма пособия по потере кормильца в месяц на всех детей
-                </h4>
-                <div class="input__label">
-                  <input type="number" class="phone glow" placeholder="введите сумму" />
+                  <input
+                    type="number"
+                    class="phone car-hourse-value"
+                    placeholder="введите количество л/c"
+                  />
                 </div>
               </div>
 
@@ -605,6 +620,7 @@
                   </div>
                 </div>
               </div>
+              <div style="margin-top: 20px" class="checking"></div>
               <div
                 style="display: none"
                 class="income__value form-bottom_left_item"

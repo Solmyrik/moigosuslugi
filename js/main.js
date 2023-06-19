@@ -344,6 +344,15 @@ const calc = () => {
     IncomeSize.textContent = '';
     incomeNumber.classList.add('min');
   }
+  const checkingText = document.querySelector('.checking');
+
+  const checkin = checking(familyMembers);
+
+  if (checkin === true) {
+    checkingText.textContent = 'Ваше имущество позволяет получить выплату';
+  } else {
+    checkingText.textContent = 'Ваше имущество не позволяет получить выплату';
+  }
 
   console.log(result);
   resultValue.textContent = result;
@@ -452,3 +461,79 @@ glow.forEach((g, i) => {
     }
   });
 });
+
+const hourseSelect = document.querySelector('.hourse-select');
+const apartamentSelect = document.querySelector('.apartament-select');
+const carSelect = document.querySelector('.car-select');
+const hourseMetersInput = document.querySelector('.house-meters');
+const apartmentMetersInput = document.querySelector('.apartament-meters');
+const areaMetersInput = document.querySelector('.area-meters');
+const carYearInput = document.querySelector('.car-year');
+const carHourseInput = document.querySelector('.car-hourse-value');
+
+function checking(familyMembers) {
+  let result = true;
+
+  const isHouse = house.className.includes('active');
+  const isApartment = apartment.className.includes('active');
+  const isArea = area.className.includes('active');
+  const isCar = car.className.includes('active');
+
+  const hourseQuantity = hourseSelect.value;
+  const apartamentQuantity = apartamentSelect.value;
+  if (isApartment && apartamentQuantity > 1) {
+    result = countingApartments(familyMembers, apartmentMetersInput.value, 24);
+  }
+  if (isHouse && hourseQuantity > 1) {
+    result = countingApartments(familyMembers, hourseMetersInput.value, 40);
+  }
+  if (isArea && areaMetersInput.value > 1) {
+    result = countingSotki(familyMembers, areaMetersInput.value);
+  }
+  if (isCar) {
+    result = countingCar();
+  }
+
+  return result;
+}
+
+function countingApartments(familyMembers, value, acceptable) {
+  if (Number(value) / Number(familyMembers) > acceptable) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function countingSotki(familyMembers, value) {
+  if (Number(value) / Number(familyMembers) > 25) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function countingCar(familyMembers) {
+  const childspensionHex = document.querySelector('.childspension-hex');
+  const disabled = childspensionHex.className.includes('active') === true ? true : false;
+  const children = parseInt(childrenInput.textContent);
+  const age = 2023 - Number(carYearInput.value);
+  if (children >= 3 || disabled) {
+    if (carSelect.value > 2) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  if (carSelect.value > 1) {
+    return false;
+  } else {
+    console.log(age, carHourseInput.value);
+    if (age >= 5 && carHourseInput.value <= 250) {
+      return true;
+    } else {
+      false;
+    }
+  }
+}
