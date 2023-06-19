@@ -101,7 +101,9 @@ const apartment = document.querySelector('.apartment');
 const area = document.querySelector('.area');
 const car = document.querySelector('.car');
 const carOld = document.querySelector('.car-old');
+const carOld2 = document.querySelector('.car-old-2');
 const carHourse = document.querySelector('.car-hourse');
+const carHourse2 = document.querySelector('.car-hourse-2');
 const houseAll = document.querySelector('.house-all');
 const apartmentAll = document.querySelector('.apartment-all');
 
@@ -129,9 +131,19 @@ car.addEventListener('change', (e) => {
   if (e.target.value == 1) {
     carOld.classList.add('active');
     carHourse.classList.add('active');
+    carOld2.classList.remove('active');
+    carHourse2.classList.remove('active');
+  }
+  if (e.target.value == 2) {
+    carOld.classList.add('active');
+    carHourse.classList.add('active');
+    carOld2.classList.add('active');
+    carHourse2.classList.add('active');
   } else {
     carOld.classList.remove('active');
     carHourse.classList.remove('active');
+    carOld2.classList.remove('active');
+    carHourse2.classList.remove('active');
   }
 });
 
@@ -352,6 +364,10 @@ const calc = () => {
     checkingText.textContent = 'Ваше имущество позволяет получить выплату';
   } else {
     checkingText.textContent = 'Ваше имущество не позволяет получить выплату';
+  }
+
+  if (result == 'У вас превышение дохода. Право на выплату отсутствует') {
+    checkingText.textContent = '';
   }
 
   console.log(result);
