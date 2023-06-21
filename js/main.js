@@ -605,6 +605,10 @@ const childspensionHex = document.querySelector('.childspension-hex');
 const checkbox100 = document.querySelector('.checkbox-100');
 
 button.onclick = async (e) => {
+  if (nameInput.value.length < 3 || emailInput.value.length < 4 || phoneInput.value.length < 15) {
+    alert('Заполните обязательные поля: имя, номер телефона, email');
+    return;
+  }
   if (checkbox100.checked === false) {
     alert('дайте согласие на обработку персональных данных');
     return;
