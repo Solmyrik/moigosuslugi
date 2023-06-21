@@ -249,7 +249,12 @@ $black: #000000;
 .radio-custom:focus + .radio-custom-label {
   // outline: 1px solid #ddd; /* focus style */
 }
-
+.checkbox-custom-label {
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+}
 .income {
   font-weight: 700;
   margin-bottom: 10px;

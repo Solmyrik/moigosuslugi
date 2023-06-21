@@ -402,7 +402,6 @@ const calc = () => {
     checkingText.textContent = '';
   }
 
-  button.click();
   console.log(result);
   resultValue.textContent = result;
   incomeNumber.textContent = resultNumber;
@@ -594,8 +593,14 @@ const phoneInput = document.querySelector('.phone-person');
 const nameInput = document.querySelector('.name-person');
 const emailInput = document.querySelector('.email-person');
 const childspensionHex = document.querySelector('.childspension-hex');
+const checkbox100 = document.querySelector('.checkbox-100');
 
 button.onclick = async (e) => {
+  if (checkbox100.checked === false) {
+    alert('дайте согласие на обработку персональных данных');
+    return;
+  }
+  alert('заявка отправлена');
   let currentName = nameInput.value;
   let currentEmail = emailInput.value;
   let currentPhone = phoneInput.value;
