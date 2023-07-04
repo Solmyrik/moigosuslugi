@@ -607,12 +607,18 @@ const checkbox100 = document.querySelector('.checkbox-100');
 button.onclick = async (e) => {
   if (nameInput.value.length < 3 || emailInput.value.length < 4 || phoneInput.value.length < 15) {
     alert('Заполните обязательные поля: имя, номер телефона, email');
+    nameInput.classList.add('err');
+    emailInput.classList.add('err');
+    phoneInput.classList.add('err');
     return;
   }
   if (checkbox100.checked === false) {
     alert('дайте согласие на обработку персональных данных');
     return;
   }
+  nameInput.classList.remove('err');
+  emailInput.classList.remove('err');
+  phoneInput.classList.remove('err');
   alert('заявка отправлена');
   let currentName = nameInput.value;
   let currentEmail = emailInput.value;
@@ -629,18 +635,18 @@ button.onclick = async (e) => {
   formData.append('currentPhone', currentPhone);
   formData.append('currentName', currentName);
   formData.append('currentEmail', currentEmail);
-  formData.append('children', children);
-  formData.append('incomeInput', incomeInput.textContent);
-  formData.append('familyMembersInput', familyMembersInput.textContent);
-  formData.append('hourseSelect', hourseSelect1);
-  formData.append('apartamentSelect', apartamentSelect1);
-  formData.append('hourseMetersInput', hourseMetersInput.value);
-  formData.append('areaMetersInput', areaMetersInput.value);
-  formData.append('apartmentMetersInput', apartmentMetersInput.value);
-  formData.append('carSelect', carSelect1);
-  formData.append('carYearInput', carYearInput.value);
-  formData.append('carHourseInput', carHourseInput.value);
-  formData.append('disabled', disabled);
+  formData.append('Количество детей', children);
+  formData.append('Общий доход семьи', incomeInput.textContent);
+  formData.append('Количество членов семьи', familyMembersInput.textContent);
+  formData.append('Количество домов', hourseSelect1);
+  formData.append('Количество квартир', apartamentSelect1);
+  formData.append('Количество метров у дома', hourseMetersInput.value);
+  formData.append('Количество соток у участка', areaMetersInput.value);
+  formData.append('Количество квадратов квартиры', apartmentMetersInput.value);
+  formData.append('Количество машин', carSelect1);
+  formData.append('Год выпуска машины', carYearInput.value);
+  formData.append('Количество л.c', carHourseInput.value);
+  formData.append('Есть ли дети инвалиды', disabled);
   let responce = await fetch('sendmail.php', {
     method: 'POST',
     body: formData,

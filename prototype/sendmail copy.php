@@ -85,3 +85,5 @@
    $mail->Body = $body;
 
    $mail->send();
+   
+   include 'amocrm/toamo.php';
