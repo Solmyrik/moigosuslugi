@@ -347,6 +347,7 @@ const calc = () => {
   let result = '';
   let resultNumber = '';
   const incomeNumber = document.querySelector('.income__numbers');
+  const middle = document.getElementById('middle');
   const income = parseFloat(incomeInput.textContent);
   const familyMembers = parseInt(familyMembersInput.textContent);
   const children = parseInt(childrenInput.textContent);
@@ -361,6 +362,8 @@ const calc = () => {
   const value100 = (averageIncomeFamily + childrenValue75) / familyMembers;
   handleFormInput();
   console.log(averageIncome, value75);
+
+  middle.textContent = averageIncome;
 
   if (averageIncome <= 13000) {
     console.log(13000, averageIncome, value75);
@@ -606,10 +609,30 @@ const checkbox100 = document.querySelector('.checkbox-100');
 
 button.onclick = async (e) => {
   if (nameInput.value.length < 3 || emailInput.value.length < 4 || phoneInput.value.length < 15) {
-    alert('Заполните обязательные поля: имя, номер телефона, email');
-    nameInput.classList.add('err');
-    emailInput.classList.add('err');
-    phoneInput.classList.add('err');
+    let errorItems = [];
+    if (nameInput.value.length < 3) {
+      nameInput.classList.add('err');
+      errorItems.push('имя');
+    } else {
+      nameInput.classList.remove('err');
+    }
+
+    if (emailInput.value.length < 4) {
+      emailInput.classList.add('err');
+      errorItems.push('email');
+    } else {
+      emailInput.classList.remove('err');
+    }
+
+    if (phoneInput.value.length < 15) {
+      phoneInput.classList.add('err');
+      errorItems.push('номер телефона');
+    } else {
+      phoneInput.classList.remove('err');
+    }
+
+    emailError(errorItems);
+
     return;
   }
   if (checkbox100.checked === false) {
@@ -656,3 +679,14 @@ button.onclick = async (e) => {
   // inputNameOne.value = '';
   // inputTelOne.value = '';
 };
+
+function emailError(value) {
+  const modaleText = document.querySelector('.modale__value');
+  const modale = document.querySelector('.modale');
+  modaleText.textContent = value.join(', ');
+  modale.style.display = 'block';
+
+  setTimeout(() => {
+    modale.style.display = 'none';
+  }, 4000);
+}
